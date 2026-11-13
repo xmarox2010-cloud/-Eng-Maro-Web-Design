@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>​Eng Maro | Web Design</title>
+<link rel="icon" href="images/Eng  Maro.png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --bg: #071426;
+  --cyan: #00e5d0;
+  --green: #24efa9;
+  --purple: #a85cff;
+  --white: #f5f4ee;
+  --muted: #b6c5d5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background:
+    radial-gradient(ellipse at 50% 15%, #173b61 0%, transparent 55%),
+    var(--bg);
+  color: var(--white);
+}
+
+button, input, textarea {
+  font-family: inherit;
+}
+
+button { cursor: pointer; }
+
+header {
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8%;
+  background: #071426dd;
+  border-bottom: 1px solid #ffffff12;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  backdrop-filter: blur(15px);
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 900;
+  color: var(--cyan);
+  text-shadow: 0 0 20px #00e5d080;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  color: #d6e3ef;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav a:hover { color: var(--cyan); }
+
+.cart-top {
+  background: #00d9bd18;
+  border: 1px solid var(--cyan);
+  color: var(--cyan);
+  padding: 10px 17px;
+  border-radius: 10px;
+}
+
+.hero {
+  min-height: 570px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 75px 20px;
+  background: radial-gradient(ellipse at center, #15507955, transparent 70%);
+}
+
+.hero-content { max-width: 1000px; }
+
+.tag {
+  display: inline-block;
+  padding: 7px 20px;
+  border: 1px solid #00e5d077;
+  border-radius: 30px;
+  color: var(--cyan);
+  font-size: 13px;
+  margin-bottom: 25px;
+  background: #00e5d00c;
+}
+
+.hero h1 {
+  font-size: clamp(35px, 6vw, 65px);
+  line-height: 1.5;
+  font-weight: 900;
+  margin-bottom: 15px;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #00efc9, #31b8ff, #b65bff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  color: #c3d1df;
+  font-size: 16px;
+  line-height: 2;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  border: none;
+  padding: 15px 28px;
+  border-radius: 13px;
+  font-weight: 800;
+  transition: .3s;
+}
+
+.btn:hover { transform: translateY(-4px); }
+
+.primary {
+  background: linear-gradient(100deg, #00dcb5, #43f5c5);
+  color: #062c30;
+  box-shadow: 0 0 25px #00e5c055;
+}
+
+.secondary {
+  color: white;
+  background: #ffffff10;
+  border: 1px solid #8ca6bd;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  margin-top: 55px;
+  padding-top: 30px;
+  border-top: 1px solid #ffffff28;
+  flex-wrap: wrap;
+}
+
+.feature strong {
+  display: block;
+  font-size: 25px;
+  color: var(--cyan);
+}
+
+.feature:nth-child(2) strong { color: #a7e7e5; }
+.feature:nth-child(3) strong { color: #dc7be9; }
+
+.feature span {
+  font-size: 12px;
+  color: #c0ccda;
+}
+
+section { scroll-margin-top: 90px; }
+
+.container {
+  width: 90%;
+  max-width: 1150px;
+  margin: auto;
+}
+
+.services { padding: 70px 0; }
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-heading h2 {
+  font-size: clamp(28px, 4vw, 43px);
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.section-heading p { color: var(--muted); }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.card {
+  background: linear-gradient(145deg, #172d48, #0d1c30);
+  border: 1px solid #ffffff20;
+  border-radius: 20px;
+  padding: 25px;
+  transition: .35s;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--cyan);
+  box-shadow: 0 10px 35px #00e5d022;
+}
+
+.card-icon {
+  width: 55px;
+  height: 55px;
+  display: grid;
+  place-items: center;
+  font-size: 27px;
+  border-radius: 14px;
+  background: #00e5d020;
+  border: 1px solid #00e5d066;
+  margin-bottom: 20px;
+}
+
+.card:nth-child(2) .card-icon {
+  background: #279fff20;
+  border-color: #279fff66;
+}
+
+.card:nth-child(3) .card-icon {
+  background: #d45cff20;
+  border-color: #d45cff66;
+}
+
+.card-label {
+  display: inline-block;
+  padding: 4px 12px;
+  background: #00e5d01b;
+  color: var(--green);
+  border-radius: 20px;
+  font-size: 11px;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  font-size: 23px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 2;
+  min-height: 65px;
+}
+
+.card ul {
+  list-style: none;
+  margin: 18px 0;
+}
+
+.card li {
+  color: #dbe5ed;
+  font-size: 12px;
+  margin: 10px 0;
+}
+
+.card li::before {
+  content: "✓";
+  color: var(--green);
+  margin-left: 8px;
+}
+
+.card-bottom {
+  border-top: 1px solid #ffffff22;
+  padding-top: 18px;
+  margin-top: 20px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.price-row small { color: var(--muted); }
+
+.price {
+  font-size: 23px;
+  color: var(--cyan);
+  font-weight: 900;
+}
+
+.order-btn {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #00dcb7, #57edc9);
+  color: #07302d;
+  font-weight: 900;
+  transition: .3s;
+}
+
+.order-btn:hover {
+  box-shadow: 0 0 20px #00e5c066;
+}
+
+.custom-section { padding: 50px 0 100px; }
+
+.custom-box {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 25px;
+}
+
+.custom-form {
+  border: 2px dashed #00d9ba88;
+  background: #142d43a8;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.custom-form h3 {
+  font-size: 23px;
+  margin: 18px 0 10px;
+}
+
+.custom-form p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 25px;
+}
+
+.custom-form label {
+  display: block;
+  margin: 12px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.custom-form input,
+.custom-form textarea {
+  width: 100%;
+  background: #ffffff0d;
+  border: 1px solid #ffffff30;
+  border-radius: 10px;
+  padding: 15px;
+  color: white;
+  outline: none;
+}
+
+.custom-form textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.custom-form input:focus,
+.custom-form textarea:focus {
+  border-color: var(--cyan);
+}
+
+.custom-form input::placeholder,
+.custom-form textarea::placeholder {
+  color: #8b9caf;
+}
+
+.custom-submit {
+  width: 100%;
+  margin-top: 20px;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #20ef8b, #6bf5ad);
+  color: #063626;
+  font-weight: 900;
+}
+
+.custom-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  color: var(--green);
+  gap: 10px;
+}
+
+.special-card {
+  background: linear-gradient(145deg, #183c54, #102337);
+  border: 1px solid #00e5d066;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.special-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 35px #00e5d022;
+}
+
+.special-card h3 {
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+.special-card p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 2;
+}
+
+.special-card ul {
+  list-style: none;
+  margin: 20px 0;
+}
+
+.special-card li {
+  margin: 12px 0;
+  color: #e3ebf2;
+  font-size: 13px;
+}
+
+.special-card li::before {
+  content: "✓ ";
+  color: var(--green);
+}
+
+.special-price {
+  color: #ffd45a;
+  font-size: 25px;
+  font-weight: 900;
+  margin-top: auto;
+  padding: 20px 0;
+}
+
+footer {
+  background: #0c1e34;
+  border-top: 1px solid #ffffff20;
+  padding: 35px 15px;
+  text-align: center;
+}
+
+footer h3 {
+  color: var(--cyan);
+  margin-bottom: 10px;
+}
+
+footer p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 2;
+}
+
+.floating-cart {
+  position: fixed;
+  bottom: 25px;
+  left: 5px;
+  width: 60px;
+  height: 60px;
+  border-radius: 17px;
+  border: none;
+  background: linear-gradient(135deg, #1af0ad, #00cdbd);
+  font-size: 25px;
+  z-index: 8;
+  box-shadow: 0 0 25px #00e5c055;
+  .tiktok-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 8;
+  box-shadow: 0 0 15px #0008;
+  text-decoration: none;
+}
+
+}
+
+.cart-count {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  background: #ff668b;
+  color: white;
+  font-size: 11px;
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: #000a;
+  z-index: 9;
+  display: none;
+}
+
+.cart-panel {
+  position: fixed;
+  top: 0;
+  left: -450px;
+  height: 100%;
+  width: 390px;
+  max-width: 90%;
+  background: #10243a;
+  z-index: 10;
+  padding: 25px;
+  overflow-y: auto;
+  transition: .3s;
+  border-right: 1px solid #00e5d055;
+}
+
+.cart-panel.active { left: 0; }
+
+.cart-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+}
+
+.cart-item {
+  padding: 15px 0;
+  border-bottom: 1px solid #ffffff20;
+}
+
+.cart-item h4 { margin-bottom: 10px; }
+
+.cart-item small { color: var(--cyan); }
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.quantity button {
+  background: #00d9bd22;
+  border: 1px solid #00d9bd77;
+  color: var(--cyan);
+  padding: 3px 12px;
+  border-radius: 6px;
+}
+
+.remove {
+  background: none;
+  border: none;
+  color: #ff758c;
+  margin-top: 10px;
+}
+
+.cart-total {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 25px 0;
+}
+
+.checkout {
+  display: none;
+  border-top: 1px solid #ffffff25;
+  padding-top: 20px;
+}
+
+.checkout input,
+.checkout textarea {
+  width: 100%;
+  background: #ffffff0c;
+  border: 1px solid #ffffff30;
+  padding: 13px;
+  margin: 8px 0;
+  border-radius: 8px;
+  color: white;
+}
+
+.checkout textarea { min-height: 80px; }
+
+.whatsapp {
+  width: 100%;
+  background: #25d366;
+  border: none;
+  padding: 14px;
+  border-radius: 9px;
+  font-weight: bold;
+  color: white;
+  margin-top: 10px;
+}
+
+.empty {
+  color: var(--muted);
+  text-align: center;
+  padding: 25px 0;
+}
+
+@media(max-width:800px) {
+  header { padding: 0 5%; }
+  nav { display: none; }
+  .cards { grid-template-columns: 1fr; }
+  .custom-box { grid-template-columns: 1fr; }
+  .features { gap: 25px; }
+  .hero { min-height: auto; }
+  .hero h1 { font-size: 36px; }
+  .card p { min-height: auto; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">​Eng Maro | Web Design</div>
+
+  <nav>
+    <a href="#">الرئيسية</a>
+    <a href="#services">خدماتنا</a>
+    <a href="#custom">اطلب موقعك</a>
+  </nav>
+
+  <button class="cart-top" onclick="openCart()">
+    🛒 السلة <span id="topCount">0</span>
+  </button>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+
+    <div class="tag">مصمم ومطور مواقع إلكترونية مخصصة</div>
+
+    <h1>
+      حول فكرة مشروعك إلى
+      <br>
+      <span class="gradient-text">ويبسايت احترافي يبهر عملاءك</span>
+    </h1>
+
+    <p>
+      أصمم لك موقعاً سريعاً، جذاباً ومجهزاً بالكامل لخدمة نشاطك التجاري
+      وزيادة مبيعاتك وأرباحك بأعلى معايير التطور.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#custom">
+        <button class="btn secondary">✨ طلب موقع بفكرة مخصصة</button>
+      </a>
+
+      <a href="#services">
+        <button class="btn primary">↓ استكشف النماذج والأسعار</button>
+      </a>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <strong>100%</strong>
+        <span>تصميم متجاوب للهواتف</span>
+      </div>
+
+      <div class="feature">
+        <strong>سريع جداً</strong>
+        <span>أداء وأمان عالي</span>
+      </div>
+
+      <div class="feature">
+        <strong>ربط مباشر</strong>
+        <span>سهولة تواصل مع عملائك</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+
+    <div class="section-heading">
+      <h2>اختر نوع موقعك وابدأ الآن</h2>
+      <p>اضغط على العرض لإضافته للسلة وإكمال بياناتك بسهولة</p>
+    </div>
+
+    <div class="cards" id="cards"></div>
+
+  </div>
+</section>
+
+<section class="custom-section" id="custom">
+  <div class="container">
+
+    <div class="custom-box">
+
+      <div class="custom-form">
+
+        <div class="tag">✦ فكرتك الخاصة</div>
+
+        <h3>عايز موقع لفكرة مختلفة أو نشاط تاني؟</h3>
+
+        <p>
+          اكتب لنا اسم مجال موقعك أو الفكرة اللي في دماغك
+          وهنحدد لك السعر والمميزات المناسبة.
+        </p>
+
+        <label>اسم الموقع أو وصف الفكرة:</label>
+
+        <textarea id="customIdea"
+        placeholder="مثال: موقع عيادة طبية / معرض سيارات / شركة مقاولات..."></textarea>
+
+        <div class="custom-price">
+          <span>السعر</span>
+          <strong>يحدد حسب الفكرة والمميزات</strong>
+        </div>
+
+        <button class="custom-submit" onclick="addCustom()">
+          🔒 أضف الفكرة للسلة وابدأ الطلب
+        </button>
+
+      </div>
+
+      <div class="special-card" onclick="addToCart(4)">
+
+        <div class="tag">✦ فلتر وفخم</div>
+
+        <div class="card-icon">✨</div>
+
+        <h3>براندات العطور والبخور</h3>
+
+        <p>
+          تصميم راقٍ يعكس فخامة عطرك ومنتجاتك
+          ومناسباتك الفاخرة.
+        </p>
+
+        <ul>
+          <li>تقسيم النوتات العطرية بأسلوب راقٍ</li>
+          <li>معرض صور رائع للمنتجات</li>
+          <li>طلبات المجموعات والهدايا</li>
+        </ul>
+
+        <div class="special-price">2,700 ج.م</div>
+
+<button class="order-btn"
+onclick="event.stopPropagation(); addToCart(4)">
+🔒 اطلب موقعك الآن
+</button>
+
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <h3>Eng Maro | Web Designتطوير وتصميم المواقع</h3>
+  <p>جميع الحقوق محفوظة © 2026</p>
+  <p>يسعدني تواصلك المباشر لأي استفسار وتجهيز فكرة مشروعك.</p>
+</footer>
+
+<button class="floating-cart" onclick="openCart()">
+  🛍️
+  <span class="cart-count" id="floatCount">0</span>
+</button>
+<a href="https://www.tiktok.com/@marwan_ahmed98"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="tiktok-btn"
+   aria-label="TikTok">
+    <svg viewBox="0 0 24 24" width="25" height="25" fill="white">
+        <path d="M19.6 6.2c-1.5-.1-2.7-1.2-3.1-2.6V3h-3.4v12.3c0 1.4-1.1 2.5-2.5 2.5s-2.5-1.1-2.5-2.5 1.1-2.5 2.5-2.5c.3 0 .6 0 .9.1V9.5c-.3 0-.6-.1-.9-.1-3.2 0-5.8 2.6-5.8 5.8S7.4 21 10.6 21s5.8-2.6 5.8-5.8V9c1.2.9 2.7 1.4 4.2 1.4V7.1c-.3 0-.7-.4-1-.9z"/>
+    </svg>
+</a>
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+
+<div class="cart-panel" id="cartPanel">
+
+  <div class="cart-head">
+    <h2>🛒 سلة مشترياتك</h2>
+    <button class="close" onclick="closeCart()">×</button>
+  </div>
+
+  <div id="cartItems"></div>
+
+  <div class="cart-total">
+    الإجمالي: <span id="total">0</span> ج.م
+  </div>
+
+  <button class="order-btn" onclick="showCheckout()">
+    إتمام الطلب
+  </button>
+
+  <div class="checkout" id="checkout">
+
+    <h3>بيانات العميل</h3>
+
+    <input id="customerName" placeholder="الاسم بالكامل">
+
+    <input id="customerPhone" type="tel" placeholder="رقم الهاتف">
+
+    <input id="customerAddress" placeholder="العنوان أو المحافظة">
+
+    <textarea id="customerNotes" placeholder="ملاحظات إضافية (اختياري)"></textarea>
+
+    <button class="whatsapp" onclick="sendOrder()">
+      إرسال الطلب عبر واتساب
+    </button>
+
+  </div>
+
+</div>
+
+<script>
+
+// رقم الواتساب الخاص بك بكود الدولة
+const WHATSAPP_NUMBER = "201220347841";
+
+const products = [
+  {
+    id: 1,
+    name: "محلات الملابس والمفروشات",
+    icon: "👕",
+    label: "متجر متكامل",
+    description: "عرض المنتجات بطريقة جذابة مع تصنيف المقاسات والألوان ونظام سهل للتسوق.",
+    features: [
+      "معرض صور احترافي للتشكيلات",
+      "جدول مقاسات وألوان تفاعلي",
+      "ربط سريع بطلب الواتساب"
+    ],
+    price: 3500
+  },
+  {
+    id: 2,
+    name: "الأحذية والكوتشيات",
+    icon: "👟",
+    label: "تصميم ستايل",
+    description: "واجهة ممتازة تعطي انطباع البراندات العالمية لاستعراض تفاصيل الكوتشي وزيادة البيع.",
+    features: [
+      "عرض التفاصيل والخامات بدقة",
+      "تحديد المقاس والمخزون المتاح",
+      "تصميم متجاوب لجميع الهواتف"
+    ],
+    price: 3000
+  },
+  {
+    id: 3,
+    name: "الجيم والمراكز الرياضية",
+    icon: "🏋️",
+    label: "اشتراكات وحجوزات",
+    description: "موقع قوي يعرض صالة الجيم والمدربين والاشتراكات ومواعيد الحجز.",
+    features: [
+      "جدول باقات الاشتراكات",
+      "عرض فريق المدربين والخدمات",
+      "نظام استمارة اشتراك وتواصل"
+    ],
+    price: 4000
+  },
+  {
+    id: 4,
+    name: "براندات العطور والبخور",
+    icon: "🌸",
+    label: "فلتر وفخم",
+    description: "تصميم راقٍ لعرض العطور والمنتجات والهدايا.",
+    features: [
+      "تقسيم النوتات العطرية",
+      "معرض صور للمنتجات",
+      "طلبات المجموعات والهدايا"
+    ],
+    price: 2500
+  }
+];
+
+let cart = [];
+
+// عرض الخدمات مع تفعيل الضغط على الكارت كله
+function displayProducts() {
+
+  const cards = document.getElementById("cards");
+
+  cards.innerHTML = products.slice(0, 3).map(p => `
+    <div class="card" onclick="addToCart(${p.id})">
+
+      <div class="card-icon">${p.icon}</div>
+
+      <span class="card-label">${p.label}</span>
+
+      <h3>${p.name}</h3>
+
+      <p>${p.description}</p>
+
+      <ul>
+        ${p.features.map(f => "<li>" + f + "</li>").join("")}
+      </ul>
+
+      <div class="card-bottom">
+
+        <div class="price-row">
+          <small>يبدأ السعر من</small>
+          <span class="price">${p.price.toLocaleString("en-US")} ج.م</span>
+        </div>
+
+        <button class="order-btn"
+        onclick="event.stopPropagation(); addToCart(${p.id})">
+          🔒 اطلب موقعك الآن
+        </button>
+
+      </div>
+
+    </div>
+  `).join("");
+}
+
+// إضافة للسلة
+function addToCart(id) {
+
+  const product = products.find(p => p.id === id);
+  if (!product) return;
+
+  const existing = cart.find(p => p.id === id);
+
+  if (existing) {
+    existing.quantity++;
+  } else {
+    cart.push({...product, quantity: 1});
+  }
+
+  updateCart();
+  openCart();
+}
+
+// إضافة فكرة مخصصة
+function addCustom() {
+
+  const idea = document.getElementById("customIdea").value.trim();
+
+  if (!idea) {
+    alert("اكتب فكرة الموقع الأول");
+    return;
+  }
+
+  cart.push({
+    id: Date.now(),
+    name: "موقع بفكرة مخصصة: " + idea,
+    price: 0,
+    quantity: 1,
+    custom: true
+  });
+
+  document.getElementById("customIdea").value = "";
+
+  updateCart();
+  openCart();
+}
+
+// تحديث السلة
+function updateCart() {
+
+  const items = document.getElementById("cartItems");
+
+  if (cart.length === 0) {
+    items.innerHTML = '<div class="empty">السلة فارغة حالياً 🛒</div>';
+  } else {
+
+    items.innerHTML = cart.map(p => `
+      <div class="cart-item">
+
+        <h4>${p.icon || "✨"} ${p.name}</h4>
+
+        <small>
+          ${p.custom ? "السعر يحدد بعد مراجعة الفكرة" :
+          p.price.toLocaleString("en-US") + " ج.م"}
+        </small>
+
+        <div class="quantity">
+
+          <button onclick="changeQuantity(${p.id}, 1)">+</button>
+
+          <span>${p.quantity}</span>
+
+          <button onclick="changeQuantity(${p.id}, -1)">-</button>
+
+        </div>
+
+        <button class="remove" onclick="removeItem(${p.id})">
+          حذف من السلة
+        </button>
+
+      </div>
+    `).join("");
+  }
+
+  const count = cart.reduce((s, p) => s + p.quantity, 0);
+
+  const total = cart.reduce(
+    (s, p) => s + p.price * p.quantity, 0
+  );
+
+  document.getElementById("topCount").textContent = count;
+  document.getElementById("floatCount").textContent = count;
+  document.getElementById("total").textContent =
+    total.toLocaleString("en-US");
+}
+
+// تعديل الكمية
+function changeQuantity(id, amount) {
+
+  const item = cart.find(p => p.id === id);
+
+  if (!item) return;
+
+  item.quantity += amount;
+
+  if (item.quantity <= 0) {
+    removeItem(id);
+    return;
+  }
+
+  updateCart();
+}
+
+// حذف منتج
+function removeItem(id) {
+
+  cart = cart.filter(p => p.id !== id);
+
+  updateCart();
+}
+
+// فتح السلة
+function openCart() {
+
+  document.getElementById("cartPanel").classList.add("active");
+
+  document.getElementById("overlay").style.display = "block";
+}
+
+// إغلاق السلة
+function closeCart() {
+
+  document.getElementById("cartPanel").classList.remove("active");
+
+  document.getElementById("overlay").style.display = "none";
+}
+
+// بيانات العميل
+function showCheckout() {
+
+  if (cart.length === 0) {
+    alert("السلة فارغة!");
+    return;
+  }
+
+  document.getElementById("checkout").style.display = "block";
+
+  document.getElementById("checkout").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+// إرسال الطلب
+function sendOrder() {
+
+  const name = document.getElementById("customerName").value.trim();
+  const phone = document.getElementById("customerPhone").value.trim();
+  const address = document.getElementById("customerAddress").value.trim();
+  const notes = document.getElementById("customerNotes").value.trim();
+
+  if (!name || !phone || !address) {
+    alert("من فضلك أكمل بياناتك");
+    return;
+  }
+
+  if (cart.length === 0) {
+    alert("السلة فارغة");
+    return;
+  }
+
+  let message = "🛍️ طلب جديد من موقع:Eng Maro | Web Design\n\n";
+
+  message += "👤 الاسم: " + name + "\n";
+  message += "📞 الهاتف: " + phone + "\n";
+  message += "📍 العنوان: " + address + "\n\n";
+
+  message += "📦 تفاصيل الطلب:\n";
+
+  cart.forEach(p => {
+
+    message += p.name + "\n";
+    message += "الكمية: " + p.quantity + "\n";
+
+    message += p.custom ?
+      "السعر: يحدد بعد مراجعة الفكرة\n\n" :
+      "السعر: " + (p.price * p.quantity) + " جنيه\n\n";
+
+  });
+
+  const total = cart.reduce(
+    (s, p) => s + p.price * p.quantity, 0
+  );
+
+  message += "💰 إجمالي الأسعار المحددة: " + total + " جنيه\n";
+
+  if (notes) {
+    message += "📝 ملاحظات: " + notes;
+  }
+
+  const url =
+    "https://wa.me/" + WHATSAPP_NUMBER +
+    "?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank");
+}
+
+// تشغيل الموقع
+displayProducts();
+updateCart();
+
+</script>
+
+</body>
+</html>
